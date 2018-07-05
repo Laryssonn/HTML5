@@ -1,47 +1,123 @@
-Google Glass
-A revolução do Google está chegando
-
-[AQUI ENTRA UMA FOTO]
-
-Menu Principal
-- Home
-- Especificações
-- Fotos
-- Multimídia
-- Fale conosco
-
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
-
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+<!DOCTYPE html>
+<html>
+<head lang = "pt-br">
+	<meta charset="UTF-8"/>
+	<title>Tudo Sobre google glass</title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+	<link rel="stylesheet" type="text/css" href="_css/form.css"/>
+	<script src="_javascript/funcoes.js"></script>
+	<script>
+		function calc_total(){
+			var qtd = parseInt(document.getElementById('idQtd').value);
+			tot = qtd * 1500;
+			document.getElementById('idTot').value = tot;
+		}
+	
+	
+	</script>
+</head>
 
 
-[BOTÃO ENVIAR]
+	
+<body>
+	<div id ="interface">
+	<header id="cabecalho">
+	<hgroup>
+	<h1>Google Glass</h1>
+	<h2>A revolução do Google está chegando</h2>
+	</hgroup>
+	<img id="icone" src="_imagens/contato.png"/>
+<nav id="menu">
+<h1>Menu Principal</h1>
+	<ul> 
+		<li onmouseover="mudaFoto('_imagens/home.png')"onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+		<li onmouseover="mudaFoto('_imagens/especificacoes.png')"onmouseout="mudaFoto('_imagens/contato.png')"/><a href="specs.html">Especificações</a></li>
+		<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+		<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+		<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+	</ul>
+</nav>
+</header>
 
-Copyright 2013 - by Gustavo Guanabara
-Facebook | Twitter
+
+<header id="cabecalho-artigo">
+	<hgroup>	
+		<h3>Fale Conosco > Contato</h3>
+		<h1>Formulário de Contato</h1>
+		<h2>por Larysson Nascimento</h2>
+		<h3 class="direita">Atualizado em 01/Maio/2013</h3>
+	</hgroup>
+</header>																																	
+<form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
+	<fieldset id="usuario">
+		<legend>Identificação do Usuário</legend>
+			<p>Nome: <input type="text" name="tNome" id="idNome" size="10" maxlength="30" placeholder="Nome Completo"/></p>
+			<p>Senha: <input type="password" name="tSenha" id="idSenha" size="8" maxlength="8" placeholder="8 Digitos"/></p>
+			<p>E-mail: <input type="email" name="tEmail" id="idEmail" size="20" maxlength="40" placeholder="Informe um E-mail"/></p>
+			<fieldset id="sexo"><legend>Sexo</legend>
+				<input type="radio" name="tSexo" id="idMasc"/> <label for="idMasc">Masculino</label><br/>
+				<input type="radio" name="tSexo" id="idFem"/><label for="idFem">Feminino</label>
+				</fieldset>
+			<p>Data de Nascimento: <input type="date" name="tNasc" id="idNasc"</p>
+	</fieldset>
+	
+	<fieldset id="endereco">	
+		<legend>Endereço do Usuário</legend>
+			<p><label for="idRua">Logradouro:</label> 
+			<input type="text" name="tRua" id="idRua" size="13" maxlength="80" placeholder="Rua, Avenida, Trav..."/></p>
+			<p><label for="idNumero">Número:</label>
+			<input type="number" name="tNumero" id="idNumero" min="0" max="9999"/></p>
+			<p><label for="idEst">Estado</label>
+			<select name="tEst" id="idEst">
+				<optgroup label="Região Sudeste">
+					<option>RJ</option>
+					<option>SP</option>
+					<option>MG</option>
+				</optgroup>
+				<optgroup label="Região Sul">
+					<option>SC</option>
+					<option>PR</option>
+					<option>RG</option>
+				</optgroup>
+			</select></p>	
+
+			
+			<p><label for="idCid">Cidade:</label>
+			<input type="text" name="tCid" id="idCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p>
+			<datalist id="cidades">
+				<option value="Rio De Janeiro"></option>
+				<option value="Nova Iguaçu"></option>
+				<option value="Niterói"></option>
+				<option value="Belford Roxo"></option>				
+			</datalist>
+	</fieldset>
+	
+	<fieldset id="mensagem">	
+		<legend>Mensagem do Usuário</legend>
+			<p><label for="idUrg">Grau de Urgência:</label>
+			Min<input type="range" name="tUrg" id="idUrg" min="0" max="10"/>Max</p>
+			<p><label for="idMsg">Mensagem:</label>
+			<textarea name="tMsg" id="idMsg"></textarea></p>
+	</fieldset>
+	
+	<fieldset id="pedido">
+		<legend>Quero um Google Glass</legend>
+			<p><input type="checkbox" checked name="tPed" id="idPed"/>
+			<label for="idPed">Gostaria de adquirir um Google Glass</label></p>
+			<p><label for="idCor">Cor:</label>
+			<input type="color" name="tCor" id="idCor" value="#0000ff"/></p>
+			<p><label for="idQtd">Quantidade:</label>
+			<input type="number" name="tQtd" id="idQtd" min ="0" max="5" value="0"/></p>
+			<p><label for="idTot">Preço Total: R$</label>
+			<input type="text" name="tTot" id="idTot" placeholder="Total a Pagar" readonly /></p>
+	</fieldset>		
+		<input type="submit" value="Enviar"/>		
+</form>
+<footer id="rodape">
+
+<p>Copyright &copy; 2013 - by Larysson Nascimento <br/>
+<a href="http://facebook.com/larysson.cb"target="_blank">Facebook</a> | <a href="http://twitter.com/laryssonn"target="_blank">Twitter</a></p>
+</footer>
+</div>
+</body>
+</html>

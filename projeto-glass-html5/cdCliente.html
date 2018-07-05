@@ -1,0 +1,21 @@
+<!DOCTYPE>
+<html>
+<head lang="pt-br">
+	<meta charset="UTF-8"/>
+	<title>Cadastro Cliente</title>
+	<link rel="stylesheet" type="text/css" href="estiloTelas.css"/>
+	
+</head>	
+<body>
+	<fieldset id="cadastro">
+		<legend>Cadastro Cliente</legend>
+		<p id="nome">Nome: <input type="text" name="tNome" id="idNome" size="30" maxlength="15" placeholder="Nome"/></p>
+		<p>Sobrenome:<input type="text" name="tSobrenome" id="idSobrenome" size="30" maxlength="20" placeholder="Sobrenome"/></p>
+		<fieldset id="sexo"><legend>Sexo</legend>
+			<input type="radio" name="tSexo" id="idMasc"/> <label for="idMasc">Masculino</label><br/>
+			<input type="radio" name="tSexo" id="idFem"/><label for="idFem">Feminino</label>
+		</fieldset>
+		<a href="cdCliente.html"><input type="submit" id="btnVerde" value="Salvar"/></a>
+		<a href="TelaLogin.html"><input type="submit" id="btnVermelho" value="Cancelar"/></a>
+	</fieldset>
+</body>

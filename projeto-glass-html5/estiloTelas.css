@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+body{
+	font-family:Arial,sans-serif;
+	color: rgba(0,0,0,1);
+}
+
+
+fieldset#login {
+	margin:300px 500px 300px 500px;
+	
+}
+
+fieldset#menu {
+	margin:auto;
+	
+}
+
+fieldset#cadastro {
+	margin:80px 60px 10px 60px;
+	padding: 20px;
+	
+}
+input#btnVerde{
+	background-color:green;
+	float:right;
+	
+}
+input#btnVermelho{
+	background-color:red;
+	float:right;
+}
+
+p#nome {
+	margin-left: 35px;
+}
+p#login {
+	margin-left: 7px;
+}
